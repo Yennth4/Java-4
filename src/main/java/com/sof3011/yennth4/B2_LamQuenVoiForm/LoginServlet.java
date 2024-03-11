@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 
         // chuyen trang
         // C1 : getRequestDispatcher :
-        request.getRequestDispatcher("form-login.jsp")
+        request.getRequestDispatcher("Buoi2/form-login.jsp")
                 .forward(request, response);
 
         // C2 : sendRedirect : chuyen trang thuan - khong lay duoc du lieu tu JSP
@@ -46,17 +46,36 @@ public class LoginServlet extends HttpServlet {
         // lay du lieu nhap tu JSP sang Servlet =) getParamsmetter
         String usname = request.getParameter("uname"); // lay gtri o input ( trong nhay kep la name JSP )
         String password = request.getParameter("psw");
-        if (usname == null) {
-            request.setAttribute("validateUSName" , "Khong duoc de trong");
+        if (usname.trim().isEmpty() && password.trim().isEmpty()) {
+            request.setAttribute("validateUSName", "Khong duoc de trong UserName");
+            request.setAttribute("validatePassword", "Khong duoc de trong Password");
+            request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
+            return;
         }
-        if (password == null) {
-            request.setAttribute("validatePassword" , "Khong duoc de trong");
+
+        else if (usname.trim().isEmpty()) {
+            request.setAttribute("validateUSName", "Khong duoc de trong UserName");
+            request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
+            return;
         }
-        if (usname != null && password != null) {
-            request.setAttribute("usname", usname);
-            request.setAttribute("password", password);
+
+        else if (password.trim().isEmpty()) {
+            request.setAttribute("validatePassword", "Khong duoc de trong Password");
+            request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
+            return;
         }
-        request.getRequestDispatcher("Buoi02/ket-qua.jsp")
-                .forward(request, response);
+
+        else {
+            if (usname.equals("hangnt169") && password.equals("123")) {
+                request.setAttribute("usname", usname);
+                request.setAttribute("password", password);
+                request.getRequestDispatcher("Buoi2/ket-qua.jsp")
+                        .forward(request, response);
+            } else {
+                request.setAttribute("checkUsPw" , "Sai ten tai khoan or mat khau !!!");
+                request.getRequestDispatcher("Buoi2/form-login.jsp")
+                        .forward(request, response);
+            }
+        }
     }
 }
