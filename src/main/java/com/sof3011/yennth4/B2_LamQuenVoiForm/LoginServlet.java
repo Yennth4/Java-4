@@ -24,7 +24,7 @@ import java.io.IOException;
 // BE(server) => logic => service, repositor, ..
 //FE va BE : trao doi bang controller thong qua phuong thuc HTTPMethods
 
-@WebServlet(value = {"/login", "/ket-qua"})
+@WebServlet(value = "/login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,13 +53,13 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        else if (usname.trim().isEmpty()) {
+        if (usname.trim().isEmpty()) {
             request.setAttribute("validateUSName", "Khong duoc de trong UserName");
             request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
             return;
         }
 
-        else if (password.trim().isEmpty()) {
+        if (password.trim().isEmpty()) {
             request.setAttribute("validatePassword", "Khong duoc de trong Password");
             request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
             return;

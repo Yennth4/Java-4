@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(value = {"/Lab1" , ""})
+@WebServlet(value = {"/Lab1" , "/ket-qua"})
 public class Lab1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
