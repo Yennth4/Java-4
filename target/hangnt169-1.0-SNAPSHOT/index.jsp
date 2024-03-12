@@ -12,10 +12,16 @@
         <thead>
         <tr>
             <th>
-                <a href="login">Login</a>
+                <a href="login">Buoi2</a>
             </th>
             <th>
-                <a href="Lab1">Lab1</a>
+                <a href="Lab1">Buoi3Lab1</a>
+            </th>
+            <th>
+                <a href="InputServlet">Buoi3Input</a>
+            </th>
+            <th>
+                <a href="sinh-vien/hien-thi">Buoi4</a>
             </th>
         </tr>
         </thead>

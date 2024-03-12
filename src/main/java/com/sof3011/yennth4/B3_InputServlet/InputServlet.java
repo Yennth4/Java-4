@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(value = "/InputServlet")
+@WebServlet(value = {"/InputServlet" , "/ket-qua1" })
 public class InputServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +34,7 @@ public class InputServlet extends HttpServlet {
 
         String[] soThichValues = request.getParameterValues("sothich");
         if (soThichValues != null && soThichValues.length > 0) {
-            request.setAttribute("sothich", String.join(",", soThichValues));
+            request.setAttribute("sothich", String.join(" , ", soThichValues));
         } else {
             request.setAttribute("sothich", ""); // Set an empty string if no hobbies are selected
         }

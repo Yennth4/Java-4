@@ -7,6 +7,7 @@
 <body>
 <%--    name là thứ mà servlet có thể nhận ra và lấy gtri--%>
     <form method="post" class="container">
+        <h2 class="text-center text-danger">Thông tin cá nhân</h2>
         <p>Họ và tên : <input name="hoten" class="form-control"></p>
         <p>Giới tính :
             <input type="radio" name="gioiTinh" value="true" class="form-check-input"> Nam
@@ -14,16 +15,16 @@
         <p>Password : <input type="password" name="password" class="form-control"></p>
         <p>Mô tả : <textarea name="mota" class="form-control"></textarea></p>
         <p>Sở thích:
-            <input type="checkbox" name="sothich" value="bongda"> Bóng đá
-            <input type="checkbox" name="sothich" value="docsach"> Đọc sách
-            <input type="checkbox" name="sothich" value="anuong"> Ăn uống
+            <input type="checkbox" name="sothich" value="Bóng đá"> Bóng đá
+            <input type="checkbox" name="sothich" value="Đọc sách"> Đọc sách
+            <input type="checkbox" name="sothich" value="Ăn uống"> Ăn uống
         </p>
         <p> Quê quán :
             <select class="form-select" name="quequan">
                 <option selected>Chọn</option>
-                <option value="">VP</option>
-                <option value="">HN</option>
-                <option value="">HCM</option>
+                <option value="VP">VP</option>
+                <option value="HN">HN</option>
+                <option value="HCM">HCM</option>
             </select>
         </p>
 <%--        check box chọn nhiều , nếu k để gtri value thì  --%>
