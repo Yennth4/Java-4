@@ -78,7 +78,7 @@ spring.mvc.view.suffix: .jsp
     <artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
 ```
-## Loop - JSTL 
+## Điều kiện, vòng lặp - JSTL 
 ```
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 ```
@@ -87,3 +87,5 @@ spring.mvc.view.suffix: .jsp
 ``` 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
+## Định dạng 
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
