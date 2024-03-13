@@ -45,6 +45,15 @@ spring.mvc.view.suffix: .jsp
 </dependency>
 ```
 
+## Beanutils
+```
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.9.4</version>
+</dependency>
+```
+
 ## MSSQL JDBC
 ``` 
 <dependency>
