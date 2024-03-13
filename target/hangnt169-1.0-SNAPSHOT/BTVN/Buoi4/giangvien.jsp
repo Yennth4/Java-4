@@ -29,7 +29,7 @@
             <button class="btn btn-outline-secondary mb-3" type="submit">Search</button>
         </form>
         <br/>
-        <button class="btn btn-info mb-3"><a href="">Add Student</a></button>
+        <button class="btn btn-info mb-3"><a href="/giang-vien/view-add">Add Student</a></button>
 <%--        href : link bên servlet--%>
         <tr class="mb-3">
             <th>STT</th>

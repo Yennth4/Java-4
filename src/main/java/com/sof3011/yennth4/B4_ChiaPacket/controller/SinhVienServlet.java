@@ -117,7 +117,7 @@ public class SinhVienServlet extends HttpServlet {
         C1:
         listSinhVien = sinhVienService.getAll();
         request.setAttribute("listSV", listSinhVien); // object
-        request.getRequestDispatcher("/Buoi4_TaiNguyen/giangvien.jsp")
+        request.getRequestDispatcher("/Buoi4_TaiNguyen/sinhviens.jsp")
                 .forward(request, response);
 //         C2:
             response.sendRedirect("/sinh-vien/hien-thi");
@@ -125,7 +125,7 @@ public class SinhVienServlet extends HttpServlet {
 
         // C2: Sử dụng Beanuntils
         SinhVien sv = new SinhVien();
-        BeanUtils .populate(sv,request.getParameterMap());
+        BeanUtils.populate(sv,request.getParameterMap());
         sinhVienService.addSinhVien(sv);
         response.sendRedirect("/sinh-vien/hien-thi");
     }

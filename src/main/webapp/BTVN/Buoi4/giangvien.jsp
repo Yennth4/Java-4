@@ -24,12 +24,12 @@
     <table class="table table-hover table-bordered table-striped text-center">
         <form action="" >
             <div class="mb-3">
-                Tên: <input name="ten" class="form-control"/>
+                Tên: <input name="tenSearch" class="form-control"/>
             </div>
             <button class="btn btn-outline-secondary mb-3" type="submit">Search</button>
         </form>
         <br/>
-        <button class="btn btn-info mb-3"><a href="view-add">Add Student</a></button>
+        <button class="btn btn-info mb-3"><a href="/giang-vien/view-add">Add Student</a></button>
 <%--        href : link bên servlet--%>
         <tr class="mb-3">
             <th>STT</th>

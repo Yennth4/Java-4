@@ -7,8 +7,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.SneakyThrows;
+import org.apache.commons.beanutils.BeanUtils;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +62,7 @@ public class GiangVienServlet extends HttpServlet {
     }
 
     private void search(HttpServletRequest request, HttpServletResponse response) {
+        String tenSearch = request.getParameter("tenSearch");
     }
 
     private void locGiangVienNu(HttpServletRequest request, HttpServletResponse response) {
@@ -70,8 +74,9 @@ public class GiangVienServlet extends HttpServlet {
     private void detail(HttpServletRequest request, HttpServletResponse response) {
     }
 
-    private void viewAdd(HttpServletRequest request, HttpServletResponse response) {
-
+    private void viewAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/BTVN/Buoi4/add-giang-vien.jsp")
+                .forward(request,response);
     }
 
     private void viewUpdate(HttpServletRequest request, HttpServletResponse response) {
@@ -85,6 +90,7 @@ public class GiangVienServlet extends HttpServlet {
 
     }
 
+    @SneakyThrows
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURI();
@@ -96,8 +102,11 @@ public class GiangVienServlet extends HttpServlet {
         }
     }
 
-    private void add(HttpServletRequest request, HttpServletResponse response) {
-
+    private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, InvocationTargetException, IllegalAccessException {
+        GiangVien giangVien = new GiangVien();
+        BeanUtils.populate(giangVien , request.getParameterMap());
+        service.addGV(giangVien);
+        response.sendRedirect("/giang-vien/hien-thi");
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) {

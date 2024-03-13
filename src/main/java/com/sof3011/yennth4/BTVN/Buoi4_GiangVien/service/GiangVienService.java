@@ -26,4 +26,12 @@ public class GiangVienService {
     public void addGV(GiangVien gv) {
         listSinhVien.add(gv);
     }
+
+    public void search(String ten) {
+        for (GiangVien gv : listSinhVien) {
+            if (ten.equalsIgnoreCase(gv.getTen())){
+//                listSinhVien.add
+            }
+        }
+    }
 }
