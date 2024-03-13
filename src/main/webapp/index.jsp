@@ -21,7 +21,10 @@
                 <a href="InputServlet">Buoi3Input</a>
             </th>
             <th>
-                <a href="sinh-vien/hien-thi">Buoi4</a>
+                <a href="/sinh-vien/hien-thi">Buoi4</a>
+            </th>
+            <th>
+                <a href="/giang-vien/hien-thi">BTVN Buoi4</a>
             </th>
         </tr>
         </thead>

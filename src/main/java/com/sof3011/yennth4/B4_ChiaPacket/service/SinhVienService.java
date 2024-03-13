@@ -10,7 +10,6 @@ public class SinhVienService {
 
     public SinhVienService() {
         this.listSinhVien = new ArrayList<>();
-        // Fill du lieu
         listSinhVien.add(new SinhVien("HangNT169" , "Nguyen Thuy Hang" , 10 , "HN" , false));
         listSinhVien.add(new SinhVien("PhongTT35" , "Tran Tuan Phong" , 11 , "HN1" , true));
         listSinhVien.add(new SinhVien("NguyenVV4" , "Vu Van Nguyen" , 12 , "HN2" , false));
@@ -24,6 +23,12 @@ public class SinhVienService {
     }
 
     public void fakeData(ArrayList<SinhVien> listSinhVien){
+        // Fill du lieu
+    }
 
+    // chuyen validate sang service => HashMap
+
+    public void addSinhVien(SinhVien sv){
+        listSinhVien.add(sv);
     }
 }

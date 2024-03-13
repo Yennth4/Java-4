@@ -6,21 +6,21 @@
     <title>Title</title>
 </head>
 <body>
-
-<form action="" method="post">
-    MSSV: <input type="text" name="mssv"/>
+<h2 class="text-center mb-3  mt-3">Them sinh vien</h2>
+<form action="/sinh-vien/add" method="post" class="container">
+    MSSV: <input type="text" name="mssv" class="form-control"/>
     <br/>
-    Tên: <input type="text" name="ten"/>
+    Tên: <input type="text" name="ten" class="form-control"/>
     <br/>
-    Tuổi: <input type="text" name="tuoi"/>
+    Tuổi: <input type="text" name="tuoi" class="form-control"/>
     <br/>
-    Địa chỉ: <input type="text" name="diaChi"/>
+    Địa chỉ: <input type="text" name="diaChi" class="form-control"/>
     <br/>
     Giới tính:
-    <input type="radio" name="gioiTinh" checked value="true"/>Nam
-    <input type="radio" name="gioiTinh" value="false"/>Nữ
+    <input type="radio" name="gioiTinh" checked value="true" class="form-check-input"/> Nam
+    <input type="radio" name="gioiTinh" value="false" class="form-check-input"/> Nữ
     <br/>
-    <button type="submit">Add</button>
+    <button class="btn btn-success text-center mt-3" type="submit">Add</button>
 </form>
 </body>
 </html>

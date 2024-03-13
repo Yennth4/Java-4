@@ -20,7 +20,7 @@
 </nav>
 
 <div class="container">
-    <h2 class="text-center mb-3">Danh sách sinh viên</h2>
+    <h2 class="text-center mb-3">Danh sách giảng viên</h2>
     <table class="table table-hover table-bordered table-striped text-center">
         <form action="" >
             <div class="mb-3">
@@ -29,27 +29,28 @@
             <button class="btn btn-outline-secondary mb-3" type="submit">Search</button>
         </form>
         <br/>
-        <button class="btn btn-info mb-3"><a href="/sinh-vien/view-add">Add Student</a></button>
+        <button class="btn btn-info mb-3"><a href="view-add">Add Student</a></button>
 <%--        href : link bên servlet--%>
         <tr class="mb-3">
             <th>STT</th>
+            <th>ID</th>
             <th>MSSV</th>
             <th>Tên</th>
             <th>Tuổi</th>
-            <th>Địa chỉ</th>
             <th>Giới tính</th>
+            <th>Địa chỉ</th>
             <th colspan="2">Action</th>
         </tr>
         <tbody>
-            <c:forEach items="${listSV}" var="sv" varStatus="index">
-        <%--    listSV : la gtri truyen tu servlet--%>
+            <c:forEach var="gv" items="${listGV}" varStatus="i">
                 <tr>
-                    <td>${index.index + 1}</td>
-                    <td>${sv.mssv}</td>
-                    <td>${sv.ten}</td>
-                    <td>${sv.tuoi}</td>
-                    <td>${sv.diaChi}</td>
-                    <td>${sv.gioiTinh ? "Nam" : "Nu"}</td>
+                    <td>${i.index+1}</td>
+                    <td>${gv.id}</td>
+                    <td>${gv.ma}</td>
+                    <td>${gv.ten}</td>
+                    <td>${gv.tuoi}</td>
+                    <td>${gv.gioiTinh ? "Duc" : "Cai"}</td>
+                    <td>${gv.diaChi}</td>
                     <td>
                         <button class="btn btn-warning">Detail</button>
                         <button class="btn btn-secondary">Edit</button>

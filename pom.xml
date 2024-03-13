@@ -63,6 +63,13 @@
             <version>2.0.0</version>
         </dependency>
 
+<!--        Bean util : sẽ tự động map ping -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
