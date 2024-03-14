@@ -15,9 +15,9 @@
         <p>Password : <input type="password" name="password" class="form-control"></p>
         <p>Mô tả : <textarea name="mota" class="form-control"></textarea></p>
         <p>Sở thích:
-            <input type="checkbox" name="sothich" value="Bóng đá"> Bóng đá
-            <input type="checkbox" name="sothich" value="Đọc sách"> Đọc sách
-            <input type="checkbox" name="sothich" value="Ăn uống"> Ăn uống
+            <input type="checkbox" name="sothich" value="Bóng đá" class="form-check-input"> Bóng đá
+            <input type="checkbox" name="sothich" value="Đọc sách" class="form-check-input"> Đọc sách
+            <input type="checkbox" name="sothich" value="Ăn uống" class="form-check-input"> Ăn uống
         </p>
         <p> Quê quán :
             <select class="form-select" name="quequan">

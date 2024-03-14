@@ -53,7 +53,7 @@ public class SinhVienServlet extends HttpServlet {
     }
 
     private void viewAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/Buoi4_TaiNguyen/add-giang-vien.jsp")
+        request.getRequestDispatcher("/Buoi4_TaiNguyen/add-sinh-vien.jsp")
                 .forward(request , response);
     }
 
@@ -72,7 +72,7 @@ public class SinhVienServlet extends HttpServlet {
     private void hienThi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { // forward nem ra ngoai le : di chuot qua forward nhan add
         listSinhVien = sinhVienService.getAll();
         request.setAttribute("listSV", listSinhVien); // object
-        request.getRequestDispatcher("/Buoi4_TaiNguyen/giangvien.jsp")
+        request.getRequestDispatcher("/Buoi4_TaiNguyen/sinhviens.jsp")
                 .forward(request, response);
     }
 
