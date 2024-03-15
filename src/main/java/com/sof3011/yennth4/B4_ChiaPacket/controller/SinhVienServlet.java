@@ -57,13 +57,39 @@ public class SinhVienServlet extends HttpServlet {
                 .forward(request , response);
     }
 
-    private void viewUpdate(HttpServletRequest request, HttpServletResponse response) {
+    private void viewUpdate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // B1 : lay thong tin tu JSP
+        String ma = request.getParameter("b");
+
+        // B2 : goi ham service
+        SinhVien sv = sinhVienService.detailSinhVien(ma);
+        request.setAttribute("listSV",sv);
+
+        // B3 : Chuyen trang
+        request.getRequestDispatcher("/Buoi4_TaiNguyen/update-sinh-vien.jsp")
+                .forward(request , response);
     }
 
-    private void detail(HttpServletRequest request, HttpServletResponse response) {
+    private void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String ma = request.getParameter("a");
+        SinhVien sv = sinhVienService.detailSinhVien(ma);
+        request.setAttribute("listSV",sv);
+        request.getRequestDispatcher("/Buoi4_TaiNguyen/detail-sinh-vien.jsp")
+                .forward(request , response);
     }
 
-    private void remove(HttpServletRequest request, HttpServletResponse response) {
+    private void remove(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // C1 : xoa theo ma
+        String ma = request.getParameter("c");
+
+//        C2: xoa theo id
+//        int ma = Integer.valueOf(request.getParameter("c"));
+
+        // B2 : Goi ham service
+        sinhVienService.xoaSinhVien(ma);
+
+        // B3 : Chuyen trang bang sendRedirect thi se giu duoc nguyen du lieu
+        response.sendRedirect("/sinh-vien/hien-thi");
     }
 
     private void search(HttpServletRequest request, HttpServletResponse response) {

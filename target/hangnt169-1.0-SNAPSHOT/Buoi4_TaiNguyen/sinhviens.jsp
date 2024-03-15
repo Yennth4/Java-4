@@ -51,9 +51,13 @@
                     <td>${sv.diaChi}</td>
                     <td>${sv.gioiTinh ? "Nam" : "Nu"}</td>
                     <td>
-                        <button class="btn btn-warning">Detail</button>
-                        <button class="btn btn-secondary">Edit</button>
-                        <button class="btn btn-outline-danger">Delete</button>
+                        <button class="btn btn-warning"><a href="/sinh-vien/detail?a=${sv.mssv}">Detail</a></button>
+                        <button class="btn btn-secondary"><a href="/sinh-vien/view-update?b=${sv.mssv}">Edit</a></button>
+                        <button class="btn btn-outline-danger"><a href="/sinh-vien/remove?c=${sv.mssv}">Delete</a></button>
+<%--                        xoa theo ma  --%>
+<%--            Xoa theo vi tri
+                        <button class="btn btn-outline-danger"><a href="/sinh-vien/remove?c=${index.index}">Delete</a></button>
+--%>
                     </td>
                 </tr>
             </c:forEach>
