@@ -48,21 +48,21 @@ public class LoginServlet extends HttpServlet {
         // lay du lieu nhap tu JSP sang Servlet =) getParamsmetter
         String usname = request.getParameter("uname"); // lay gtri o input ( trong nhay kep la name JSP )
         String password = request.getParameter("psw");
-        if (usname.trim().isEmpty() && password.trim().isEmpty()) {
-            request.setAttribute("validateUSName", "Khong duoc de trong UserName");
-            request.setAttribute("validatePassword", "Khong duoc de trong Password");
-            request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
-            return;
-        }
 
-        if (usname.trim().isEmpty()) {
-            request.setAttribute("validateUSName", "Khong duoc de trong UserName");
-            request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
-            return;
-        }
+        if (usname.trim().isEmpty() || password.trim().isEmpty()) {
+            if (usname.trim().isEmpty()) {
+                request.setAttribute("validateUSName", "Không được để trống UserName");
+            }
 
-        if (password.trim().isEmpty()) {
-            request.setAttribute("validatePassword", "Khong duoc de trong Password");
+            if (password.trim().isEmpty()) {
+                request.setAttribute("validatePassword", "Không được để trống Password");
+            }
+
+            // Truyền lại dữ liệu người dùng đã nhập vào form
+            request.setAttribute("usnameInput", usname);
+            request.setAttribute("passwordInput", password);
+
+            // Chuyển hướng lại form
             request.getRequestDispatcher("Buoi2/form-login.jsp").forward(request, response);
             return;
         }

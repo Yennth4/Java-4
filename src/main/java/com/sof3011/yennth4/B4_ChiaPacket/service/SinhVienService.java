@@ -34,6 +34,18 @@ public class SinhVienService {
         listSinhVien.add(sv);
     }
 
+    public void updateSinhVien(SinhVien sv) {
+        for (int i = 0; i < listSinhVien.size(); i++) {
+            SinhVien sinhVien = listSinhVien.get(i);
+            if (sinhVien.getMssv().equalsIgnoreCase(sv.getMssv())) {
+                sinhVien.setTen(sv.getTen());
+                sinhVien.setTuoi(sv.getTuoi());
+                sinhVien.setDiaChi(sv.getDiaChi());
+                sinhVien.setGioiTinh(sv.getGioiTinh());
+            }
+        }
+    }
+
     /*
     * Mảng tĩnh :
     * a[] = 5 6 1 2

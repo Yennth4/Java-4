@@ -17,7 +17,7 @@
     Giới tính:
     <input type="radio" name="gioiTinh" checked value="true" class="form-check-input"/> Nam
     <input type="radio" name="gioiTinh" value="false" class="form-check-input"/> Nữ
-    <br/>
+    <br/><br/>
     Địa chỉ: <input type="text" name="diaChi" class="form-control"/>
     <br/>
     <div class="text-center">

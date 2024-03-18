@@ -18,15 +18,16 @@
                 ${messageJSP}
             </h1>
             <div class="mb-3">
-                <label for="uname" class="form-label"><b>Username : </b></label>
-                <input type="text" placeholder="Enter Username" name="uname" class="form-control">
+                <label class="form-label"><b>Username : </b></label>
+                <input value="${usnameInput}" type="text" placeholder="Enter Username" name="uname" class="form-control">
                 <p class="text-danger">${validateUSName}</p>
             </div>
 
             <div class="mb-3">
-                <label for="psw" class="form-label"><b>Password : </b></label>
-                <input type="password" placeholder="Enter Password" name="psw" class="form-control">
+                <label class="form-label"><b>Password : </b></label>
+                <input value="${passwordInput}" type="password" placeholder="Enter Password" name="psw" class="form-control">
                 <p class="text-danger">${validatePassword}</p>
+                <p>Vui long nhap user : hangnt169 && pass : 123 de dang nhap</p>
             </div>
 
             <div class="mb-3 text-center">

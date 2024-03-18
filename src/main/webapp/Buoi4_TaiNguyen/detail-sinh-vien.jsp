@@ -8,7 +8,7 @@
 <body>
 <h2 class="text-center mb-3  mt-3">Thong tin sinh vien</h2>
 <form action="/sinh-vien/add" method="post" class="container">
-    MSSV: <input type="text" name="mssv" class="form-control" value="${listSV.mssv}"/>
+    MSSV: <input type="text" name="mssv" class="form-control" value="${listSV.mssv}" disabled/>
     <br/>
     Tên: <input type="text" name="ten" class="form-control" value="${listSV.ten}"/>
     <br/>

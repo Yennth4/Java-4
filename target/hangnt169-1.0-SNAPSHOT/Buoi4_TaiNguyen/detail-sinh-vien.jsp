@@ -8,7 +8,7 @@
 <body>
 <h2 class="text-center mb-3  mt-3">Thong tin sinh vien</h2>
 <form action="/sinh-vien/add" method="post" class="container">
-    MSSV: <input type="text" name="mssv" class="form-control" value="${listSV.mssv}"/>
+    MSSV: <input type="text" name="mssv" class="form-control" value="${listSV.mssv}" disabled/>
     <br/>
     Tên: <input type="text" name="ten" class="form-control" value="${listSV.ten}"/>
     <br/>
@@ -17,7 +17,7 @@
     Giới tính:
     <input type="radio" name="gioiTinh" checked value="true" ${listSV.gioiTinh ? "checked" : ""} class="form-check-input"/> Nam
     <input type="radio" name="gioiTinh" value="false" ${!listSV.gioiTinh ? "checked" : ""} class="form-check-input"/> Nữ
-    <br/>
+    <br/><br/>
     Địa chỉ: <input type="text" name="diaChi" class="form-control" value="${listSV.diaChi}"/>
     <br/>
 </form>

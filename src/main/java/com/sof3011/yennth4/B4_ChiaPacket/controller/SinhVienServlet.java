@@ -156,7 +156,12 @@ public class SinhVienServlet extends HttpServlet {
         response.sendRedirect("/sinh-vien/hien-thi");
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) {
-
+    private void update(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, IllegalAccessException, IOException {
+        SinhVien sv = new SinhVien();
+//        Sao chep doi tuong tu form vao doi tuong sv
+        BeanUtils.populate(sv,request.getParameterMap());
+//        Goi ham update
+        sinhVienService.updateSinhVien(sv);
+        response.sendRedirect("/sinh-vien/hien-thi");
     }
 }
