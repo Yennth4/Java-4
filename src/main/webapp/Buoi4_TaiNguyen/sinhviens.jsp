@@ -51,9 +51,11 @@
                     <td>${sv.diaChi}</td>
                     <td>${sv.gioiTinh ? "Nam" : "Nu"}</td>
                     <td>
-                        <button class="btn btn-warning"><a href="/sinh-vien/detail?a=${sv.mssv}">Detail</a></button>
-                        <button class="btn btn-secondary"><a href="/sinh-vien/view-update?b=${sv.mssv}">Edit</a></button>
-                        <button class="btn btn-outline-danger"><a href="/sinh-vien/remove?c=${sv.mssv}">Delete</a></button>
+                        <a href="/sinh-vien/detail?a=${sv.mssv}"><button class="btn btn-warning">Detail</button></a>
+                        <a href="/sinh-vien/view-update?b=${sv.mssv}"><button class="btn btn-secondary">Edit</button></a>
+                        <a href="/sinh-vien/remove?c=${sv.mssv}" onclick="return confirmDelete();">
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </a>
 <%--                        xoa theo ma  --%>
 <%--            Xoa theo vi tri
                         <button class="btn btn-outline-danger"><a href="/sinh-vien/remove?c=${index.index}">Delete</a></button>
@@ -65,4 +67,11 @@
     </table>
 </div>
 </body>
+
+<script>
+    function confirmDelete() {
+        return confirm("Ban co muon xoa khong ?");
+    }
+</script>
+
 </html>

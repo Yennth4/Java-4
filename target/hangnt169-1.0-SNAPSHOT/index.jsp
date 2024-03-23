@@ -1,5 +1,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!-- Link CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+<!-- Link angularJS  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+<!-- Link JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +36,16 @@
                 <td><a href="sinh-vien/hien-thi">Buoi 4</a></td>
                 <td><a href="EmploybeeServlet">Lab 3 - Bai 1</a></td>
                 <td><a href="giang-vien/hien-thi">BTVN 4</a></td>
+            </tr>
+            <tr>
+                <td><a href="">Asm1</a></td>
+                <td><a href="/movie/hien-thi">Movie</a></td>
+                <td><a href="/user/hien-thi">User</a></td>
+            </tr>
+            <tr>
+                <td><a href="/phone/hien-thi">Lab3-4</a></td>
+                <td><a href="/phone/hien-thi">Phone</a></td>
+                <td><a href="/user/hien-thi">User</a></td>
             </tr>
         </tbody>
     </table>

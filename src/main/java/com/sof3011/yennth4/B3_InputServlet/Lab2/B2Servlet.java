@@ -15,7 +15,7 @@ import java.io.IOException;
 public class B2Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/Buoi3/Lab2/B2/form.jsp").forward(request,response);
+        request.getRequestDispatcher("/Buoi3/Lab2/B2/phone.jsp").forward(request,response);
     }
 
     @Override

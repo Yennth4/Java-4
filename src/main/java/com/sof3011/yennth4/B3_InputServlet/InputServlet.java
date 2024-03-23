@@ -12,7 +12,7 @@ import java.io.IOException;
 public class InputServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("Buoi3/Input/form.jsp")
+        request.getRequestDispatcher("Buoi3/Input/phone.jsp")
                 .forward(request , response);
     }
 

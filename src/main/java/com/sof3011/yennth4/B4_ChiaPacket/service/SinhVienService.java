@@ -35,8 +35,7 @@ public class SinhVienService {
     }
 
     public void updateSinhVien(SinhVien sv) {
-        for (int i = 0; i < listSinhVien.size(); i++) {
-            SinhVien sinhVien = listSinhVien.get(i);
+        for (SinhVien sinhVien : listSinhVien) {
             if (sinhVien.getMssv().equalsIgnoreCase(sv.getMssv())) {
                 sinhVien.setTen(sv.getTen());
                 sinhVien.setTuoi(sv.getTuoi());
@@ -47,20 +46,20 @@ public class SinhVienService {
     }
 
     /*
-    * Mảng tĩnh :
-    * a[] = 5 6 1 2
-    *i =    0 1 2 3  => lấy gtri cua phan tu i : a[i]
-    *
-    * Mảng động : lists (kieu Object)
-    *   SV1  SV2    SV3   SV4
-    * i : 0   1      2     3
-    *  => lấy gtri cua phan tu i trong list : list.get(i)
-    * */
+     * Mảng tĩnh :
+     * a[] = 5 6 1 2
+     *i =    0 1 2 3  => lấy gtri cua phan tu i : a[i]
+     *
+     * Mảng động : lists (kieu Object)
+     *   SV1  SV2    SV3   SV4
+     * i : 0   1      2     3
+     *  => lấy gtri cua phan tu i trong list : list.get(i)
+     * */
 
-//     C1 : xoa theo maSV trong list
+    //     C1 : xoa theo maSV trong list
     public void xoaSinhVien(String mssv) {
         for (int i = 0; i < listSinhVien.size(); i++) {
-            if (listSinhVien.get(i).getMssv().equalsIgnoreCase(mssv)) {
+            if (listSinhVien.get(i).getMssv().equalsIgnoreCase(mssv)){
                 listSinhVien.remove(i);
             }
         }
@@ -75,10 +74,10 @@ public class SinhVienService {
 
     public SinhVien detailSinhVien(String mssv) {
         for (SinhVien sv : listSinhVien) {
-            if (sv.getMssv().equalsIgnoreCase(mssv)){
+            if (sv.getMssv().equalsIgnoreCase(mssv)) {
                 return sv;
             }
         }
-            return null;
+        return null;
     }
 }

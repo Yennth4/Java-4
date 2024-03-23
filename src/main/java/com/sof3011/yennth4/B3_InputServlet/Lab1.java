@@ -13,7 +13,7 @@ public class Lab1 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // trang hien thi de lay du lieu
-        request.getRequestDispatcher("Buoi3/Lab1/form.jsp")
+        request.getRequestDispatcher("Buoi3/Lab1/phone.jsp")
                 .forward(request, response);
 
     }

@@ -16,7 +16,7 @@ import java.io.IOException;
 public class B1Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/Buoi3/Lab2/B1/form.jsp").forward(request , response);
+        request.getRequestDispatcher("/Buoi3/Lab2/B1/phone.jsp").forward(request , response);
     }
 
     @Override
@@ -35,6 +35,6 @@ public class B1Servlet extends HttpServlet {
                 request.setAttribute("dientich" , dienTich);
             }
         }
-        request.getRequestDispatcher("/Buoi3/Lab2/B1/form.jsp").forward(request , response);
+        request.getRequestDispatcher("/Buoi3/Lab2/B1/phone.jsp").forward(request , response);
     }
 }
