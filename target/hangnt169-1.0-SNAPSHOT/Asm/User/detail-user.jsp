@@ -12,6 +12,6 @@
     <p>Password <input type="password" name="password" disabled class="form-control" value="${listUser.password}"></p>
     <p>Fullname : <input type="text" name="fullname" disabled class="form-control" value="${listUser.fullname}"></p>
     <p>Admin : <input type="checkbox" name="admin" disabled class="form-check-input" value="${listUser.admin ? "true" : "false"}" ${listUser.admin ? "checked" : ""}></p>
-    <a href="/user/hien-thi"><button type="submit">Back</button></a>
+    <a href="/user/hien-thi"><button type="submit" class="btn btn-outline-secondary">Back</button></a>
 </body>
 </html>

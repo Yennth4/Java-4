@@ -12,6 +12,6 @@
     <p>Description : <textarea name="description" disabled class="form-control">${listMovie.description}</textarea></p>
     <p>Active : <input type="checkbox" name="active" disabled class="form-check-input" value="${listMovie.active ? 'true' : 'false'}" ${listMovie.active ? 'checked' : ''}></p>
     <p>Poster : <input type="image" name="poster" disabled class="form-control" value="${listMovie.poster}"></p>
-    <a href="/movie/hien-thi"><button type="submit">Back</button></a>
+    <a href="/movie/hien-thi"><button type="submit" class="btn btn-outline-secondary">Back</button></a>
 </body>
 </html>
