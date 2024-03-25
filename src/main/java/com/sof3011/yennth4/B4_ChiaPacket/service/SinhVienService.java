@@ -1,7 +1,6 @@
 package com.sof3011.yennth4.B4_ChiaPacket.service;
 
 import com.sof3011.yennth4.B4_ChiaPacket.entity.SinhVien;
-import org.apache.commons.math3.analysis.function.Sin;
 
 import java.util.ArrayList;
 import java.util.List;

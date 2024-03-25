@@ -1,5 +1,7 @@
 package com.sof3011.yennth4.B8_Hibernate.util;
 //import com.example.exam.entity.SanPham;
+
+import com.sof3011.yennth4.B8_Hibernate.entity.Category;
 import jakarta.persistence.EntityManager;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -18,24 +20,25 @@ public class HibernateUtil {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        properties.put(Environment.URL, "jdbc:sqlserver://;serverName=localhost;databaseName=j4;encrypt=true;trustServerCertificate=true");
+        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=hibernate_demo;encrypt=true;trustServerCertificate=true;");
         properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "abcd@1234");
+        properties.put(Environment.PASS, "123");
+        //      sua pwd va dbName
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-        //conf.addAnnotatedClass(SanPham.class);
-//        conf.addAnnotatedClass(User.class);
+        conf.addAnnotatedClass(Category.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
+
     }
 
-    public static EntityManager createEntityManager() {
-        return FACTORY.createEntityManager();
+    public static SessionFactory getFACTORY() {
+        return FACTORY;
     }
 
     public static void main(String[] args) {
-        createEntityManager();
+        System.out.println(getFACTORY());
     }
 }
