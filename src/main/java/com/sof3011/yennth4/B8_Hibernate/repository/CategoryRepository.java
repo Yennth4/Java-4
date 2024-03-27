@@ -9,18 +9,19 @@ import java.util.List;
 
 public class CategoryRepository {
 
+    public Session session = HibernateUtil.getFACTORY().openSession();
+
     public List<Category> getAll() {
-        Session session = HibernateUtil.getFACTORY().openSession();
         List<Category> listCategory = session.createQuery("FROM Category").list();
         session.close();
         return listCategory;
     }
 
     public Category getOne(Long id) {
-        Session session = HibernateUtil.getFACTORY().openSession();
         Category category = (Category) session.createQuery("FROM Category WHERE id =: id").getSingleResult();
         // id phía trước là của class , phía sau là của thuộc tính db
         // getSingleResult : láy ra 1 dòng dữ liệu
+
         session.close();
         return category;
     }
@@ -41,7 +42,7 @@ public class CategoryRepository {
     // Update
     public boolean updateCategory(Category category) {
         Transaction tra = null;
-        try (Session session = HibernateUtil.getFACTORY().openSession();) {
+        try {
             tra = session.beginTransaction();
             session.merge(category); // update
             tra.commit();
@@ -68,7 +69,3 @@ public class CategoryRepository {
         System.out.println(new CategoryRepository().getAll());
     }
 }
-
-/**
- *
- */

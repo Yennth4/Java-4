@@ -1,8 +1,6 @@
 package com.sof3011.yennth4.B8_Hibernate.util;
-//import com.example.exam.entity.SanPham;
 
 import com.sof3011.yennth4.B8_Hibernate.entity.Category;
-import jakarta.persistence.EntityManager;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

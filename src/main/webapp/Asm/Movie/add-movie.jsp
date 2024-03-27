@@ -15,7 +15,7 @@
     <p class="text-danger">${errorMessages["title"]}</p>
     <p>Description : <textarea name="description" class="form-control"></textarea></p>
     <p>Active : <input type="checkbox" name="active" value="true" class="form-check-input"></p>
-    <p>Poster : <input type="url" name="poster" class="form-control"></p>
+    <p>Poster : <input type="text" name="poster" class="form-control"></p>
     <p class="text-danger">${errorMessages["poster"]}</p>
     <button class="btn btn-success mb-3" type="submit">Save</button>
 </form>

@@ -11,8 +11,8 @@ public class MovieService {
 
     public MovieService() {
         
-        listMovie.add(new Movie("1" , "Ma" , "Kinh di" , true , "123" ));
-        listMovie.add(new Movie("2" , "Ma1" , "Kinh di1" , false , "123" ));
+        listMovie.add(new Movie("1" , "Ma" , "Kinh di" , true , "crWhQ-zyv0M" ));
+        listMovie.add(new Movie("2" , "Ma1" , "Kinh di1" , false , "uv7q1Dlbhc4" ));
     }
     
     public List<Movie> getAllMovie() {

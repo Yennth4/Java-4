@@ -88,7 +88,7 @@ public class UserServlet extends HttpServlet {
     private void update(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, IllegalAccessException, IOException, ServletException {
         User user = new User();
         BeanUtils.populate(user, request.getParameterMap());
-
+        request.setAttribute("form" , user);
         Map<String, String> errorMessages = validateUser(user);
 
         if (!errorMessages.isEmpty()) {

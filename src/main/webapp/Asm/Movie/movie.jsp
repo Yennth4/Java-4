@@ -4,11 +4,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <html>
 <head>
-    <title>Danh sash movie</title>
+    <title>Danh sách movie</title>
 </head>
 <body>
-<h2 class="text-info text-center mb-3 mt-3">Danh sach movie</h2>
-<a href="/movie/view-add"><button class="btn btn-success mb-3">Add</button></a>
+<h2 class="text-info text-center mb-3 mt-3">Danh sách movie</h2>
+<a href="/movie/view-add"><button class="btn btn-success mb-3">Add movie</button></a>
 <table class="table table-hover table-bordered">
         <thead class="text-center">
             <th>ID</th>
@@ -16,7 +16,7 @@
             <th>Description</th>
             <th>Active</th>
             <th>Poster</th>
-            <th>Hanh dong</th>
+            <th>Hành động</th>
         </thead>
 
         <tbody>
@@ -26,7 +26,9 @@
                 <td>${movie.title}</td>
                 <td>${movie.description}</td>
                 <td>${movie.active ? "Co" : "Khong"}</td>
-                <td>${movie.poster}</td>
+                <td>
+                    <iframe width="777" height="300" src="https://www.youtube.com/embed/${movie.poster}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </td>
                 <td class="text-center">
                     <a href="/movie/detail?a=${movie.id}">
                         <button class="btn btn-secondary">Detail</button>

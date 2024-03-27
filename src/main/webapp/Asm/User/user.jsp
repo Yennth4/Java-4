@@ -7,7 +7,7 @@
     <title>Danh sash user</title>
 </head>
 <body>
-<h2 class="text-info text-center mb-3 mt-3">Danh sach user</h2>
+<h2 class="text-info text-center mb-3 mt-3">Danh sách user</h2>
 <a href="/user/view-add"><button class="btn btn-success mb-3">Add</button></a>
 <table class="table table-hover table-bordered">
 

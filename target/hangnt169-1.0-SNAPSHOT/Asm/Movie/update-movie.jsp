@@ -12,16 +12,16 @@ Validate các trường dữ liệu bắt buộc: title, poster, thiếu trườ
 <body class="container">
 <form method="post" action="/movie/update">
     <h2 class="text-info text-center mb-3 mt-3">Update movie</h2>
-    <p>Id : <input type="text" name="id" readonly class="form-control" value="${listMovie.id}"></p>
+    <p>Id : <input type="text" name="id" readonly class="form-control" value="${form.id}"></p>
     <p class="text-danger">${errorMessages["id"]}</p>
-    <p>Title <input type="text" name="title" class="form-control" value="${listMovie.title}"></p>
+    <p>Title <input type="text" name="title" class="form-control" value="${form.title}"></p>
     <p class="text-danger">${errorMessages["title"]}</p>
-    <p>Description : <textarea name="description"  class="form-control">${listMovie.description}</textarea></p>
+    <p>Description : <textarea name="description"  class="form-control">${form.description}</textarea></p>
     <p>Active :
-        <input type="checkbox" name="active" class="form-check-input" value="true" ${listMovie.active ? 'checked' : ''}>
-        <input type="hidden" name="active" value="false">
+        <input type="checkbox" name="active" class="form-check-input" value="true" ${form.active == true ? 'checked' : ''}>
+<%--        <input type="hidden" name="active" value="false">--%>
     </p>
-    <p>Poster : <input type="image" name="poster" class="form-control" value="${listMovie.poster}"></p>
+    <p>Poster : <input type="text" name="poster" class="form-control" value="${form.poster}"></p>
     <p class="text-danger">${errorMessages["poster"]}</p>
     <button class="btn btn-success mb-3" type="submit">Save</button>
 </form>

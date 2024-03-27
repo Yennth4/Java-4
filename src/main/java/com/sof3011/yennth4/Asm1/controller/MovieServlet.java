@@ -82,7 +82,6 @@ public class MovieServlet extends HttpServlet {
     private void update(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, IllegalAccessException, IOException, ServletException {
         Movie movie = new Movie();
         BeanUtils.populate(movie,request.getParameterMap());
-        // Kiểm tra và xác thực dữ liệu
         Map<String, String> errorMessages = validateRequiredFields(movie);
 
         if (!errorMessages.isEmpty()) {
