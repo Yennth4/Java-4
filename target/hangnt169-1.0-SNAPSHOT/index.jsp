@@ -38,14 +38,19 @@
                 <td><a href="giang-vien/hien-thi">BTVN 4</a></td>
             </tr>
             <tr>
-                <td><a href="">Asm1</a></td>
-                <td><a href="/movie/hien-thi">Movie</a></td>
-                <td><a href="/user/hien-thi">User</a></td>
+                <td><a href="/san-pham/view-all">Buoi 7</a></td>
+                <td><a href="/movie/hien-thi">Asm1</a></td>
+                <td><a href="">BTVN 10</a></td>
             </tr>
             <tr>
-                <td><a href="/phone/hien-thi">Lab3-4</a></td>
-                <td><a href="/phone/hien-thi">Phone</a></td>
-                <td><a href="/user/hien-thi">User</a></td>
+                <td><a href="/category/hienthi">Buoi 8</a></td>
+                <td><a href="/phone/hien-thi">Lab 4</a></td>
+                <td><a href="">BTVN 11</a></td>
+            </tr>
+            <tr>
+                <td><a href="">Buoi 9</a></td>
+                <td><a href="/NhanVienServlet/hienThi">Lab 5</a></td>
+                <td><a href="">BTVN 12</a></td>
             </tr>
         </tbody>
     </table>

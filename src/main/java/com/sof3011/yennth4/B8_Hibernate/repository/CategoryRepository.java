@@ -18,7 +18,7 @@ public class CategoryRepository {
     }
 
     public Category getOne(Long id) {
-        Category category = (Category) session.createQuery("FROM Category WHERE id =: id").getSingleResult();
+        Category category = (Category) session.createQuery("FROM Category WHERE id =:id").getSingleResult();
         // id phía trước là của class , phía sau là của thuộc tính db
         // getSingleResult : láy ra 1 dòng dữ liệu
 
@@ -53,7 +53,7 @@ public class CategoryRepository {
     }
 
     // Delete
-    public boolean daleteCategory(Category category) {
+    public boolean deleteCategory(Category category) {
         Transaction tra = null;
         try (Session session = HibernateUtil.getFACTORY().openSession();) {
             tra = session.beginTransaction();

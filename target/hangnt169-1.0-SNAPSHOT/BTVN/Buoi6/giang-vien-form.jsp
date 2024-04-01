@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div style="border-style: groove ">
+<div style="border-style: groove">
     <form action="/giang-vien/tim-kiem" method="get">
         <br>
         Tên: <input name="ten"/>
@@ -56,7 +56,6 @@
                 <button><a href="/giang-vien/detail?detail=${gv.id}">Detail</a></button>
                 <button><a href="/giang-vien/view-update?update=${gv.id}">Edit</a></button>
                 <button><a href="/giang-vien/remove?deleteMa=${gv.id}">Remove</a></button>
-
             </td>
         </tr>
     </c:forEach>

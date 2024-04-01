@@ -9,6 +9,7 @@
 <body>
 <h2 class="text-info text-center mb-3 mt-3">Danh sách movie</h2>
 <a href="/movie/view-add"><button class="btn btn-success mb-3">Add movie</button></a>
+<a href="/user/hien-thi"><button class="btn btn-success mb-3">List User</button></a>
 <table class="table table-hover table-bordered">
         <thead class="text-center">
             <th>ID</th>
