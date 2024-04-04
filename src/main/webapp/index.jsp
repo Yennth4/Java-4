@@ -52,6 +52,11 @@
                 <td><a href="/NhanVienServlet/hienThi">Lab 5</a></td>
                 <td><a href="">BTVN 12</a></td>
             </tr>
+            <tr>
+                <td><a href="">Buoi 10</a></td>
+                <td><a href="/KhachHangServlet">Lab 6</a></td>
+                <td><a href="">BTVN 13</a></td>
+            </tr>
         </tbody>
     </table>
 </body>
