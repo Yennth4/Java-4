@@ -6,42 +6,45 @@
 <head>
     <title>Quan ly ban</title>
 </head>
-<body class="container">
-<form action="/BanServlet/add" method="post">
-    <p>Ma : <input type="text" name="ma" class="form-control" value="${fillListBan.ma}"></p>
-    <span class="text-danger">${errorMa}</span>
+<body>
+<h3 class="mt-3 mb-3">Quan ly ban</h3>
+<form action="/ban/update?id=${param.id}" method="post">
+    <p>Ma : <input type="text" name="ma" value="${ban.ma}" readonly class="form-control"></p>
+    <p class="text-danger">${errorMa}</p>
 
-    <p>Ten : <input type="text" name="ten" class="form-control" value="${fillListBan.ten}"></p>
-    <span class="text-danger">${errorTen}</span>
+    <p>Ten : <input type="text" name="ten" value="${ban.ten}" class="form-control"></p>
+    <p class="text-danger">${errorTen}</p>
 
-    <p>So thich : <input type="text" name="soThich" class="form-control" value="${fillListBan.soThich}"></p>
-    <span class="text-danger">${errorSoThich}</span>
+    <p>So thich : <input type="text" name="soThich" value="${ban.soThich}" class="form-control"></p>
+    <p class="text-danger">${errorSoThich}</p>
 
     <p>Gioi tinh :
-        <input type="radio" name="gioiTinh" value="1" checked ${fillListBan.gioiTinh == 1 ? 'checked' : ''} > Nam
-        <input type="radio" name="gioiTinh" value="0" ${fillListBan.gioiTinh == 0 ? 'checked' : ''} > Nu
+        <input type="radio" name="gioiTinh" value="1" ${ban.gioiTinh == 1 ? 'checked' : ''}> Nam
+        <input type="radio" name="gioiTinh" value="0" ${ban.gioiTinh == 0 ? 'checked' : ''}> Nu
     </p>
+
     <p>Moi quan he :
-        <select name="idmqh" class="form-select" >
-            <option value="" disabled>Chon moi quan he</option>
-            <c:forEach items="${listMQH}" var="mqh">
-                <option value="${mqh.id}">${mqh.ten}</option>
+        <select name="idmqh" class="form-select">
+            <option disabled selected>Chon moi quan he</option>
+            <c:forEach items="${listMqh}" var="mqh">
+                <option value="${mqh.id}" ${mqh.id == ban.moiQuanHe.id ? 'selected' : ''}>${mqh.ten}</option>
             </c:forEach>
         </select>
     </p>
-    <button type="submit" onclick="return confirm('Ban co muon them khong ?')" class="btn btn-success">Add</button>
-    <button type="submit" onclick="return confirm('Ban co muon sua khong ?')" class="btn btn-warning">Chinh sua</button>
+    <button class="btn btn-warning" type="submit" onclick="if (!confirm('Ban co muon chinh sua ' + ${param.id} + ' khong ?')){return false} else {alert('Sua thanh cong id ' + ${param.id})}">Update</button>
 </form>
+
 <table class="table table-hover table-bordered">
+    <h3 class="mt-3 mb-3">Danh sach ban</h3>
     <thead>
-    <th>STT</th>
-    <th>Ma</th>
-    <th>Ten</th>
-    <th>So thich</th>
-    <th>Gioi tinh</th>
-    <th>ID mqh</th>
-    <th>Ten mqh</th>
-    <th>Hanh dong</th>
+        <th>STT</th>
+        <th>Ma</th>
+        <th>Ten</th>
+        <th>So thich</th>
+        <th>Gioi tinh</th>
+        <th>ID mqh</th>
+        <th>Ten mqh</th>
+        <th>Hanh dong</th>
     </thead>
 
     <c:forEach items="${listBan}" var="b" varStatus="i">
@@ -58,7 +61,7 @@
                     <button type="button" class="btn btn-warning">Detail</button>
                 </a>
                 <a href="/BanServlet/remove?id=${b.id}"
-                   onclick="return confirm('Ban co muon xoa id ' + ${b.id} + ' khong ?')">
+                   onclick="if(!confirm('Ban co muon xoa id ' + ${b.id} + ' khong ?')){return false} else {alert('Xoa thanh cong')}">
                     <button type="button" class="btn btn-outline-danger">Delete</button>
                 </a>
             </td>

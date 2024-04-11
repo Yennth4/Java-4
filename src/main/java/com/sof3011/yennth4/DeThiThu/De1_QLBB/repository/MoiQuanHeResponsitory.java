@@ -1,6 +1,6 @@
-package com.sof3011.yennth4.DeThiThu.De1_QLBB.responsitory;
+package com.sof3011.yennth4.DeThiThu.De1_QLBB.repository;
 
-import com.sof3011.yennth4.DeThiThu.De1_QLBB.entity.Ban;
+import com.sof3011.yennth4.DeThiThu.De1_QLBB.entity.MoiQuanHe;
 import com.sof3011.yennth4.DeThiThu.De1_QLBB.util.HibernateUtil;
 import jakarta.persistence.Query;
 import org.hibernate.Session;
@@ -9,42 +9,39 @@ import org.hibernate.Transaction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BanResponsitory {
+public class MoiQuanHeResponsitory {
 
-    public List<Ban> getAll() {
-
-        List<Ban> listBan = new ArrayList<>();
-
+    public List<MoiQuanHe> getAll() {
+        List<MoiQuanHe> list = new ArrayList<>();
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
-            Query query = session.createQuery("FROM Ban", Ban.class);
-            listBan = query.getResultList();
+            Query query = session.createQuery("FROM MoiQuanHe", MoiQuanHe.class);
+            list = query.getResultList();
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listBan;
+        return list;
     }
 
-    public Ban getOne(int id) {
-        Ban ban = null;
+    public MoiQuanHe getOneById(int id) {
+        MoiQuanHe moiQuanHe = null;
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
-            Query query = session.createQuery("FROM Ban WHERE id = :id", Ban.class);
-            query.setParameter("id" , id);
-            ban = (Ban) query.getSingleResult();
+            Query query = session.createQuery("FROM MoiQuanHe WHERE id = :id", MoiQuanHe.class);
+            query.setParameter("id", id);
+            moiQuanHe = (MoiQuanHe) query.getSingleResult();
             session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return ban;
+        return moiQuanHe;
     }
 
-    public boolean add(Ban ban){
+    public boolean add(MoiQuanHe moiQuanHe) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
-            session.persist(ban);
+            session.persist(moiQuanHe);
             transaction.commit();
-            session.close();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,13 +49,12 @@ public class BanResponsitory {
         return false;
     }
 
-    public boolean update(Ban ban){
+    public boolean sua(MoiQuanHe moiQuanHe) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
-            session.merge(ban);
+            session.merge(moiQuanHe);
             transaction.commit();
-            session.close();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,21 +62,16 @@ public class BanResponsitory {
         return false;
     }
 
-    public boolean delete(Ban ban){
+    public boolean xoa(MoiQuanHe moiQuanHe) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
-            session.delete(ban);
+            session.delete(moiQuanHe);
             transaction.commit();
-            session.close();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new BanResponsitory().getAll());
     }
 }

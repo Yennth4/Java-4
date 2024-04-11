@@ -1,4 +1,5 @@
 package com.sof3011.yennth4.DeThiThu.De1_QLBB.util;
+
 import com.sof3011.yennth4.DeThiThu.De1_QLBB.entity.Ban;
 import com.sof3011.yennth4.DeThiThu.De1_QLBB.entity.MoiQuanHe;
 import org.hibernate.SessionFactory;
@@ -18,7 +19,7 @@ public class HibernateUtil {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=PTPM_FINALLY_JAVA_SOF3011;encrypt=true;trustServerCertificate=true;");
+        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=PTPM_FINALLY_JAVA_SOF3012;encrypt=true;trustServerCertificate=true;");
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "123");
         properties.put(Environment.SHOW_SQL, "true");

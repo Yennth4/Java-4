@@ -6,18 +6,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "moiquanhe")
+@Table(name = "MoiQuanHe")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MoiQuanHe {
+@Builder
 
+public class MoiQuanHe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
