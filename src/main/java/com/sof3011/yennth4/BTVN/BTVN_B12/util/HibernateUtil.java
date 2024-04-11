@@ -1,6 +1,5 @@
 package com.sof3011.yennth4.BTVN.BTVN_B12.util;
 
-import com.sof3011.yennth4.B8_Hibernate.entity.Category;
 import com.sof3011.yennth4.BTVN.BTVN_B12.entity.SinhVien;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

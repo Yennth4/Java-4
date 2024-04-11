@@ -1,6 +1,6 @@
 package com.sof3011.yennth4.BTVN.BTVN_B12.service;
 
-import com.sof3011.yennth4.B8_Hibernate.util.HibernateUtil;
+import com.sof3011.yennth4.B8_CRUD_Hibernate.util.HibernateUtil;
 import com.sof3011.yennth4.BTVN.BTVN_B12.entity.SinhVien;
 import org.hibernate.Session;
 
