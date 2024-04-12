@@ -12,7 +12,7 @@
     <p>ID : <input type="text" name="id" value="${sp.id}" readonly></p>
     <p>Ma : <input type="text" name="ma" value="${sp.ma}"></p>
     <p>Ten : <input type="text" name="ten" value="${sp.ten}"></p>
-    <p>Gia ban : <input type="text" name="giaBan" value="${sp.giaBan}"></p>
+    <p>Gia ban : <input type="number" name="giaBan" value="${sp.giaBan}"></p>
     <p>So luong : <input type="number" name="soLuong" value="${sp.soLuong}"></p>
     <p>Loai sp :
         <select name="IdLoaiSP">
