@@ -8,7 +8,8 @@
 </head>
 <body>
 <h3 class="mt-3 mb-3">Quan ly ban</h3>
-<form action="/ban/update?id=${param.id}" method="post">
+<form action="/BanServlet/update?id=${param.id}" method="post">
+    <input type="hidden" id="errorStatus" value="${errorStatus}">
     <p>Ma : <input type="text" name="ma" value="${ban.ma}" readonly class="form-control"></p>
     <p class="text-danger">${errorMa}</p>
 
@@ -31,8 +32,7 @@
             </c:forEach>
         </select>
     </p>
-
-    <button class="btn btn-warning" type="submit" onclick="if (!confirm('Ban co muon chinh sua ' + ${param.id} + ' khong ?')){return false} else {alert('Sua thanh cong id ' + ${param.id})}">Update</button>
+    <button class="btn btn-warning" type="submit" onclick="return confirmUpdate()">Update</button>
 </form>
 
 <table class="table table-hover table-bordered">
@@ -68,4 +68,21 @@
     </c:forEach>
 </table>
 </body>
+<script>
+    function confirmUpdate() {
+        if (!confirm('Bạn có muốn chỉnh sửa ${param.id} không ?')) {
+            return false;
+        } else {
+            var errorStatus = "${errorStatus}"; // Lấy giá trị của errorStatus từ JSP
+            if (errorStatus === "true") {
+                alert('Sửa thất bại');
+                return false;
+            } else {
+                alert('Sửa thành công id ${param.id}');
+                return true;
+            }
+        }
+    }
+</script>
+
 </html>

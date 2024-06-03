@@ -79,8 +79,10 @@ public class BanServlet extends HttpServlet {
     private void editBan(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, IllegalAccessException, ServletException, IOException {
         Ban ban = new Ban();
         BeanUtils.populate(ban, request.getParameterMap());
-        serviceBan.sua(ban);
-        hienThi(request, response);
+        if (validate(ban , request , response)) {
+            serviceBan.sua(ban);
+            hienThi(request, response);
+        }
     }
 
     private void addBan(HttpServletRequest request, HttpServletResponse response) throws InvocationTargetException, IllegalAccessException, IOException {
@@ -89,4 +91,41 @@ public class BanServlet extends HttpServlet {
         serviceBan.them(ban);
         response.sendRedirect("/BanServlet/hien-thi");
     }
+
+    public boolean validate(Ban ban, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String errorMa = "";
+        String errorTen = "";
+        String errorSoThich = "";
+
+        boolean hasError = false;
+
+        if (ban.getMa().isEmpty()) {
+            errorMa = "Mã không được trống";
+            hasError = true;
+        }
+        if (ban.getTen().isEmpty()) {
+            errorTen = "Tên không được trống";
+            hasError = true;
+        }
+        if (ban.getSoThich().isEmpty()) {
+            errorSoThich = "Sở thích không được trống";
+            hasError = true;
+        }
+
+        if (hasError) {
+            // Đặt trạng thái lỗi vào thuộc tính của yêu cầu
+            request.setAttribute("errorMa", errorMa);
+            request.setAttribute("errorTen", errorTen);
+            request.setAttribute("errorSoThich", errorSoThich);
+            // Đặt trạng thái lỗi vào thuộc tính của yêu cầu để sử dụng trong JS
+            request.setAttribute("errorStatus", "true");
+            request.getRequestDispatcher("/DeThiThu/De2_QLBB/listBan.jsp").forward(request, response);
+        } else {
+            // Nếu không có lỗi, đặt trạng thái lỗi thành false
+            request.setAttribute("errorStatus", "false");
+        }
+        return hasError;
+    }
+
 }
